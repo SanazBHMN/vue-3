@@ -7,6 +7,8 @@ export default {
       name: "Sanaz",
       location: "<b>Helsinki, Finland</b>",
       hack: `<a href='#' onclick='alert("You have been hacked!")'>Win a prize!</a>`,
+      headingId: "heading",
+      isDisabled: true,
     };
   },
 };
@@ -16,6 +18,8 @@ export default {
   <p>{{ greet }} {{ name }}</p>
   <div v-html="location"></div>
   <div v-html="hack"></div>
+  <h2 v-bind:id="headingId">Heading</h2>
+  <button v-bind:disabled="isDisabled">Bind</button>
 </template>
 
 <style scoped>
