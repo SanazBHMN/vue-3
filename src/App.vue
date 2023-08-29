@@ -42,18 +42,18 @@ export default {
   <p>{{ greet }} {{ name }}</p>
   <div v-html="location"></div>
   <div v-html="hack"></div>
-  <h2 v-bind:id="headingId">Heading</h2>
-  <button v-bind:disabled="isDisabled">Bind</button>
+  <h2 :id="headingId">Heading</h2>
+  <button :disabled="isDisabled">Bind</button>
   <h2 class="underline">Underlined Text</h2>
-  <h2 class="underline" v-bind:class="status">Status</h2>
-  <h2 v-bind:class="isPromoted && 'promoted'">Promoted Movie</h2>
-  <h2 v-bind:class="isSoldout ? 'sold-out' : 'new'">Soldout? movie</h2>
-  <h2 v-bind:class="['new', 'promoted']">Newly promoted movie</h2>
-  <h2 v-bind:class="[isPromoted && 'promoted', isSoldout ? 'sold-out' : 'new']">
+  <h2 class="underline" :class="status">Status</h2>
+  <h2 :class="isPromoted && 'promoted'">Promoted Movie</h2>
+  <h2 :class="isSoldout ? 'sold-out' : 'new'">Soldout? movie</h2>
+  <h2 :class="['new', 'promoted']">Newly promoted movie</h2>
+  <h2 :class="[isPromoted && 'promoted', isSoldout ? 'sold-out' : 'new']">
     Array conditional movie
   </h2>
   <h2
-    v-bind:class="{
+    :class="{
       promoted: isPromoted,
       new: !isSoldout,
       'sold-out': isSoldout,
@@ -62,7 +62,7 @@ export default {
     Object conditional movie
   </h2>
   <h2
-    v-bind:style="{
+    :style="{
       color: highlightColor,
       fontSize: headerSize + 'px',
       padding: '20px',
@@ -70,9 +70,9 @@ export default {
   >
     Inline Style
   </h2>
-  <h2 v-bind:style="headerStyleObject">Object style</h2>
-  <div v-bind:style="[baseStyleObject, successStyleObject]">Success Style</div>
-  <div v-bind:style="[baseStyleObject, successStyleObject, dangerStyleObject]">
+  <h2 :style="headerStyleObject">Object style</h2>
+  <div :style="[baseStyleObject, successStyleObject]">Success Style</div>
+  <div :style="[baseStyleObject, successStyleObject, dangerStyleObject]">
     Danger Style
   </div>
 </template>
