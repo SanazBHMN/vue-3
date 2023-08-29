@@ -5,6 +5,7 @@ export default {
     return {
       greet: "Hello",
       name: "Sanaz",
+      location: "Helsinki, Finland",
     };
   },
 };
@@ -12,6 +13,7 @@ export default {
 
 <template>
   <p>{{ greet }} {{ name }}</p>
+  <div v-text="location"></div>
 </template>
 
 <style scoped>
