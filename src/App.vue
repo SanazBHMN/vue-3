@@ -9,6 +9,9 @@ export default {
       hack: `<a href='#' onclick='alert("You have been hacked!")'>Win a prize!</a>`,
       headingId: "heading",
       isDisabled: true,
+      status: "danger",
+      isPromoted: true,
+      isSoldout: true,
     };
   },
 };
@@ -20,19 +23,38 @@ export default {
   <div v-html="hack"></div>
   <h2 v-bind:id="headingId">Heading</h2>
   <button v-bind:disabled="isDisabled">Bind</button>
+  <h2 class="underline">Underlined Text</h2>
+  <h2 class="underline" v-bind:class="status">Status</h2>
+  <h2 v-bind:class="isPromoted && 'promoted'">Promoted Movie</h2>
+  <h2 v-bind:class="isSoldout ? 'sold-out' : 'new'">Soldout? movie</h2>
+  <h2 v-bind:class="['new', 'promoted']">Newly promoted movie</h2>
+  <h2 v-bind:class="[isPromoted && 'promoted', isSoldout ? 'sold-out' : 'new']">
+    Array conditional movie
+  </h2>
+  <h2
+    v-bind:class="{
+      promoted: isPromoted,
+      new: !isSoldout,
+      'sold-out': isSoldout,
+    }"
+  >
+    Object conditional movie
+  </h2>
 </template>
 
 <style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+.underline {
+  text-decoration: underline;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+.promoted {
+  font-style: italic;
 }
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
+
+.new {
+  color: olivedrab;
+}
+
+.sold-out {
+  color: red;
 }
 </style>
