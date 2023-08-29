@@ -5,7 +5,8 @@ export default {
     return {
       greet: "Hello",
       name: "Sanaz",
-      location: "Helsinki, Finland",
+      location: "<b>Helsinki, Finland</b>",
+      hack: `<a href='#' onclick='alert("You have been hacked!")'>Win a prize!</a>`,
     };
   },
 };
@@ -13,7 +14,8 @@ export default {
 
 <template>
   <p>{{ greet }} {{ name }}</p>
-  <div v-text="location"></div>
+  <div v-html="location"></div>
+  <div v-html="hack"></div>
 </template>
 
 <style scoped>
