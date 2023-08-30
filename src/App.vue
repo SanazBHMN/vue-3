@@ -5,6 +5,7 @@ export default {
     return {
       num: "Hi",
       display: true,
+      showElement: false,
     };
   },
 };
@@ -21,6 +22,9 @@ export default {
     <h2>Software Developer</h2>
     <h2>JobGo International Oy</h2>
   </template>
+
+  <h2 v-show="showElement">Using v-show</h2>
+  <h2 v-if="showElement">Using v-if</h2>
 </template>
 
 <style scoped></style>
