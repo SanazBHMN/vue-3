@@ -1,6 +1,7 @@
 <template>
   <h2>Fullname: {{ firstName }} {{ lastName }}</h2>
   <h2>Computed fullname: {{ fullName }}</h2>
+  <button @click="changeFullname">Change fullname</button>
 
   <!-- <h2>
     Total: {{ items.reduce((total, curr) => (total = total + curr.price), 0) }}
@@ -65,12 +66,25 @@ export default {
         0
       );
     },
+    changeFullname() {
+      this.fullName = "Queena Ahopaolo";
+    },
   },
   computed: {
-    fullName() {
-      console.log("total computed property");
-      return `${this.firstName} ${this.lastName}`;
+    fullName: {
+      get() {
+        return `${this.firstName} ${this.lastName}`;
+      },
+      set(value) {
+        const names = value.split(" ");
+        this.firstName = names[0];
+        this.lastName = names[1];
+      },
     },
+    // fullName() {
+    //   console.log("total computed property");
+    //   return `${this.firstName} ${this.lastName}`;
+    // },
     total() {
       return this.items.reduce(
         (total, curr) => (total = total + curr.price),
