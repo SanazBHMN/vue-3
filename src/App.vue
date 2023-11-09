@@ -4,7 +4,12 @@
   <Greet name="Marina" role="marketing specialist" />
   <Greet :name="name" :role="role" /> -->
 
-  <Article title="Article Title" :likes="5" :isPublished="true" />
+  <Article
+    id="my-article"
+    title="Article Title"
+    :likes="5"
+    :isPublished="true"
+  />
 </template>
 
 <script>
